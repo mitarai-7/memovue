@@ -29,10 +29,7 @@
     const Counter = {
       data() {
         return {
-          list: [
-              {index: 1,text: "alice"},
-              {index: 2,text: "bob"}
-            ],
+          list: JSON.parse(localStorage.getItem('memo')) ,
           text: ""
         }
       },
@@ -50,11 +47,11 @@
         updateMemo(index) {
 
         },
-        readMemo() {
-          return this.storage.getItem('memo')
-        },
         removeMemo(index) {
           this.list.splice((index - 1),1)
+          this.list.forEach((item,i) => {
+            item.index = i + 1
+          });
           localStorage.setItem('memo', JSON.stringify(this.list))
         }
       }
