@@ -5,22 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@next"></script>
   <title>Document</title>
 </head>
 
 <body>
   <div id="memo">
-    <input type="text" v-model="text">
-    <button v-on:click="addMemo">追加</button>
+    <memo-input v-on:add="addMemo"></memo-input>
     <ul>
-      <li v-for="memo in list">
-        <div>
-          {{memo.index}}.{{memo.text}}
-          <button v-on:click="updateMemo(memo.index)">修正</button>
-          <button v-on:click="removeMemo(memo.index)">削除</button>
-        </div>
-      </li>
+      <memo-list-item v-for="(memo, index) in list"
+          v-bind:memo="memo"
+          v-bind:key="index"
+          v-on:update="updateMemo"
+          v-on:remove="removeMemo"></memo-list-item>
     </ul>
   </div>
   <script src="./app.js"></script>

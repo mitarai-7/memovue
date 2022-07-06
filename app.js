@@ -1,33 +1,70 @@
-
-const Counter = {
+const MemoListItem = {
   data() {
     return {
-      list: JSON.parse(localStorage.getItem('memo')),
+      text: this.memo.text,
+      editing: false
+    }
+  },
+  props: ['memo'],
+  emits:['update', 'remove'],
+  template: `
+<li>
+<div v-if="editing">
+  <input type="text" v-model="text">
+  <button v-on:click="$emit('update', {'id':this.memo.id, 'text':this.text});editing = false">確定</button>
+</div>
+<div v-else>
+  {{text}}
+  <button v-on:click="editing = true">修正</button>
+  <button v-on:click="$emit('remove', this.memo.id)">削除</button>
+</div>
+</li>
+`
+}
+
+const MemoInput = {
+  data(){
+    return {
       text: ""
     }
   },
-  methods: {
-    addMemo() {
-      const text = this.text
-      let index = 1
-      if (this.list.length > 0) {
-        const size = this.list.length - 1
-        index = this.list[size].index + 1
-      }
-      this.list.push({ index: index, text: this.text })
-      localStorage.setItem('memo', JSON.stringify(this.list))
-    },
-    updateMemo(index) {
-
-    },
-    removeMemo(index) {
-      this.list.splice((index - 1), 1)
-      this.list.forEach((item, i) => {
-        item.index = i + 1
-      });
-      localStorage.setItem('memo', JSON.stringify(this.list))
-    }
-  }
+  emits: ['add'],
+  template: `
+<input type="text" v-model="text"><button v-on:click="$emit('add', text);text=''">追加</button>
+`
 }
 
-Vue.createApp(Counter).mount('#memo')
+const app = Vue.createApp({
+  data() {
+    const memos = localStorage.getItem('memo') ? JSON.parse(localStorage.getItem('memo')) : []
+    return {
+      list: memos
+    }
+  },
+  methods: {
+    addMemo(text) {
+      this.list.push({'text': text})
+      this.list.forEach((x,i) => { x.id = i });
+      localStorage.setItem('memo', JSON.stringify(this.list))
+    },
+    updateMemo(memo) {
+      this.list.splice(memo.index, 1, memo)
+      localStorage.setItem('memo', JSON.stringify(this.list))
+    },
+    removeMemo(id) {
+      console.log(this.list)
+      this.list.splice(id, 1)
+      this.list.forEach((x,i) => { x.id = i });
+      console.log(this.list)
+      localStorage.setItem('memo', JSON.stringify(this.list))
+    }
+
+  },
+  components: {
+    MemoListItem,
+    MemoInput
+  }
+})
+
+
+app.mount('#memo')
