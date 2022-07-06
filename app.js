@@ -14,7 +14,7 @@ const MemoListItem = {
   <button v-on:click="$emit('update', {'id':this.memo.id, 'text':this.text});editing = false">確定</button>
 </div>
 <div v-else>
-  {{text}}
+  {{memo.text}}
   <button v-on:click="editing = true">修正</button>
   <button v-on:click="$emit('remove', this.memo.id)">削除</button>
 </div>
@@ -52,10 +52,8 @@ const app = Vue.createApp({
       localStorage.setItem('memo', JSON.stringify(this.list))
     },
     removeMemo(id) {
-      console.log(this.list)
       this.list.splice(id, 1)
       this.list.forEach((x,i) => { x.id = i });
-      console.log(this.list)
       localStorage.setItem('memo', JSON.stringify(this.list))
     }
 
