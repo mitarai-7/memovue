@@ -2,4 +2,37 @@
     width: 600px;
     margin-left: auto;
     margin-right: auto;
+
+}
+
+ul, ol {
+    padding: 0 0 0 0;
+    position: relative;
+}
+
+ul li, ol li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+    padding: 0.5em;
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #212121;
+}
+
+ul li:hover,ol li:hover{
+    background-color: #eee;
+    opacity: 0.75;
+}
+
+input {
+    border-width: 0 0 1px 0;
+    resize: none;
+    outline: none;
+    font-family: none;
+    padding: 0;
+    width: 80%;
 }
