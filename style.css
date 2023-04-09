@@ -5,6 +5,18 @@
 
 }
 
+.button-primary {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin-left: 4px;
+    text-decoration: none;
+    color: #009688;
+    background-color: #FFF;
+    border: solid 2px #009688;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
 ul, ol {
     padding: 0 0 0 0;
     position: relative;
@@ -28,7 +40,7 @@ ul li:hover,ol li:hover{
     opacity: 0.75;
 }
 
-input {
+input, textarea {
     border-width: 0 0 1px 0;
     resize: none;
     outline: none;

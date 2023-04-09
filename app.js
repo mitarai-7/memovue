@@ -11,12 +11,12 @@ const MemoListItem = {
 <li>
 <div v-if="editing">
   <input type="text" v-model="text">
-  <button v-on:click="$emit('update', {'id':this.memo.id, 'text':this.text});editing = false">確定</button>
+  <button class="button-primary" v-on:click="$emit('update', {'id':this.memo.id, 'text':this.text});editing = false">確定</button>
 </div>
 <div v-else>
   {{memo.text}}
-  <button v-on:click="editing = true">修正</button>
-  <button v-on:click="$emit('remove', this.memo.id)">削除</button>
+  <button class="button-primary" v-on:click="editing = true">修正</button>
+  <button class="button-primary" v-on:click="$emit('remove', this.memo.id)">削除</button>
 </div>
 </li>
 `
@@ -30,7 +30,7 @@ const MemoInput = {
   },
   emits: ['add'],
   template: `
-<input type="text" v-model="text"><button v-on:click="$emit('add', text);text=''">追加</button>
+<input type="text" v-model="text"><button class="button-primary" v-on:click="$emit('add', text);text=''">追加</button>
 `
 }
 
