@@ -18,8 +18,8 @@ const MemoListItem = {
 <div v-else>
   {{memo.text}}
   <div class="command">
-    <button class="button-primary" v-on:click="editing = true">修正</button>
-    <button class="button-primary" v-on:click="$emit('remove', this.memo.id)">削除</button>
+    <button class="button-secondary" v-on:click="editing = true">修正</button>
+    <button class="button-secondary" v-on:click="$emit('remove', this.memo.id)">削除</button>
   </div>
 </div>
 </li>
