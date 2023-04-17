@@ -12,7 +12,10 @@
 
 <body>
   <div id="memo">
-    <memo-input v-on:add="addMemo"></memo-input>
+    <header>
+      <memo-input v-on:add="addMemo"></memo-input>
+    </header>
+    <hr>
     <ul>
       <memo-list-item v-for="(memo, index) in list"
           v-bind:memo="memo"

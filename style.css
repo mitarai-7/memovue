@@ -1,8 +1,11 @@
+body {
+    background-color: #e8e8ee;
+}
+
 #memo {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .button-primary {
@@ -40,28 +43,14 @@ ul, ol {
 }
 
 ul li, ol li {
-    margin-bottom: 4px;
+    margin: 12px 0;
     line-height: 1.5;
-    padding: 0.7em;
     list-style-type: none;
 }
 
-li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #212121;
-}
-
-ul li:hover,ol li:hover{
-    background-color: #eee;
-    opacity: 0.75;
-}
-
 input, textarea {
-    border-width: 0 0 1px 0;
     resize: none;
     outline: none;
     font-family: none;
-    padding: 0;
-    width: 80%;
+    width: 75%;
 }
