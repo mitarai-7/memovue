@@ -41,6 +41,7 @@ const MemoInput = {
 `
 }
 
+/* global Vue */
 const app = Vue.createApp({
   data() {
     const memos = localStorage.getItem('memo') ? JSON.parse(localStorage.getItem('memo')) : []
@@ -50,7 +51,7 @@ const app = Vue.createApp({
   },
   methods: {
     addMemo(text) {
-      this.list.push({'text': text})
+      this.list.push({ text })
       this.list.forEach((x,i) => { x.id = i });
       localStorage.setItem('memo', JSON.stringify(this.list))
     },
@@ -70,6 +71,5 @@ const app = Vue.createApp({
     MemoInput
   }
 })
-
 
 app.mount('#memo')
