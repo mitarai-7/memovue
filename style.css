@@ -1,56 +1,59 @@
 body {
-    background-color: #e8e8ee;
+  background-color: #e8e8ee;
 }
 
 #memo {
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-primary {
-    display: inline-block;
-    padding: 0.2em 1em;
-    margin-left: 4px;
-    text-decoration: none;
-    color: #FFF;
-    background-color: #33b693;
-    border: solid 2px #009688;
-    border-radius: 6px;
-    font-weight: bold;
+  display: inline-block;
+  padding: 0.2em 1em;
+  margin-left: 4px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #33b693;
+  border: solid 2px #009688;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 .button-secondary {
-    display: inline-block;
-    padding: 0.2em 1em;
-    margin-left: 4px;
-    text-decoration: none;
-    color: #009688;
-    background-color: #FFF;
-    border: solid 2px #009688;
-    border-radius: 6px;
-    font-weight: bold;
+  display: inline-block;
+  padding: 0.2em 1em;
+  margin-left: 4px;
+  text-decoration: none;
+  color: #009688;
+  background-color: #fff;
+  border: solid 2px #009688;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 .command {
-    float: right;
-    vertical-align: middle;
+  float: right;
+  vertical-align: middle;
 }
 
-ul, ol {
-    padding: 0 0 0 0;
-    position: relative;
+ul,
+ol {
+  padding: 0 0 0 0;
+  position: relative;
 }
 
-ul li, ol li {
-    margin: 12px 0;
-    line-height: 1.5;
-    list-style-type: none;
+ul li,
+ol li {
+  margin: 12px 0;
+  line-height: 1.5;
+  list-style-type: none;
 }
 
-input, textarea {
-    resize: none;
-    outline: none;
-    font-family: none;
-    width: 75%;
+input,
+textarea {
+  resize: none;
+  outline: none;
+  font-family: none;
+  width: 75%;
 }
