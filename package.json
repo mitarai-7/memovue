@@ -1,0 +1,24 @@
+{
+  "name": "memovue",
+  "version": "1.0.0",
+  "description": "アプリケーションを実行するために、Webサーバーをインストールして下さい",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitarai-7/memovue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitarai-7/memovue/issues"
+  },
+  "homepage": "https://github.com/mitarai-7/memovue#readme",
+  "devDependencies": {
+    "eslint": "8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "prettier": "2.8.8"
+  }
+}
